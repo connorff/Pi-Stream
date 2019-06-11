@@ -1,0 +1,8 @@
+CREATE DATABASE picamera
+
+CREATE TABLE users(
+	id INT(4) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	username VARCHAR(20) NOT NULL,
+	password CHAR(60) NOT NULL,
+	user_level INT(2) NOT NULL
+);
