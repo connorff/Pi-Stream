@@ -4,7 +4,7 @@ from db import db_connect
 from users_class import User
 from camera_class import Camera
 
-app = Flask(__name__, template_folder="../tpl")
+app = Flask(__name__, template_folder="../tpl", static_folder="../static")
 conn = db_connect()
 user = User(conn)
 
@@ -53,7 +53,6 @@ def watch():
 	#if the user is not signed in
 	if not session.get("username"):
 		return redirect(url_for("index"))
-	
 	return render_template("watch.html")
 
 #route for just the video (used to display the video to the /watch page)
@@ -67,4 +66,4 @@ def watch_video_only():
                     mimetype='multipart/x-mixed-replace; boundary=frame')
 
 if __name__ == "__main__":
-	app.run("localhost", port=8080)
+	app.run("0.0.0.0", port=8080)

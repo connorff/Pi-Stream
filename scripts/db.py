@@ -1,5 +1,5 @@
 import mysql.connector
-from users_class import User
+#from users_class import User
 
 def db_connect():
 	connection = mysql.connector.connect(
@@ -10,3 +10,6 @@ def db_connect():
 	)
 	
 	return connection
+
+#conn = db_connect()	
+#user = User(conn)

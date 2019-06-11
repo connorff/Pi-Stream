@@ -116,3 +116,9 @@ class User:
 			
 		sql = "UPDATE users SET user_level = %s WHERE username = %s;"
 		self.db.execute()
+	def getUsernameById(self, user_id):
+		sql = "SELECT username FROM users WHERE id = %s;"
+		
+		self.db.execute(sql, (user_id,))
+		username = self.db.fetchone()[0]
+		return username

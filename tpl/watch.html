@@ -1,10 +1,24 @@
 <!DOCTYPE html>
-<html>
+<html style="margin: 0;height: 100%;">
 	<head>
 		<title>Watch Page</title>
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
 	</head>
-	<body>
+	<body style="margin: 0;">
+		<div class="navbar">
+			  <li class="navbar-item navber-item-active"><a href="{{ url_for('watch') }}" class="navbar-item">Watch</a></li>
+			  <li class="navbar-item"><a href="{{ url_for('listUsers') }}" class="navbar-item">Account</a></li>
+			  <li class="navbar-item"><a href="{# url_for('search') #}" class="navbar-item">Search</a></li>
+			  <li class="navbar-item"><a href="{# url_for('about') #}" class="navbar-item">About</a></li>
+		</div>
 		<!-- URL for the MJPEG video -->
-		<img src="{{ url_for('watch_video_only') }}">
+		<img class="stream-image" src="{{ url_for('watch_video_only') }}" alt="Video Source">
+		<div class="comments">
+		</div>
 	</body>
 </html>
+<!-- Code for printing the URL for the video -->
+{# url_for('watch_video_only') #}
+
+<!-- URL for testing -->
+<!-- https://cdn.mos.cms.futurecdn.net/pAWXMnvfQPyfdthf6ZeUaM-320-80.jpg -->

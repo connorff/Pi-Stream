@@ -1,0 +1,49 @@
+.navbar{
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	background-color: #333;
+}
+.navbar-item {
+	float: left;
+	display: block;
+	color: white;
+	text-align: center;
+	padding: 1.5vh 16px;
+	text-decoration: none;
+	font-size: 3vh;
+}
+.navbar-item:hover {
+	background-color: #555;
+	color: white;
+}
+.navber-item-active {
+	background-color: #111;
+}
+@media all and (max-width: 980px){
+	.stream-image{
+		width: 100%;
+		height: auto;
+	}
+	.navbar-item {
+		font-size: 2em;
+	}
+}
+.stream-image {
+	padding-top: 2%;
+	display: block;
+	margin: auto auto auto auto;
+	width: 70vh;
+}
+.comments {
+	overflow-y: scroll;
+	height: 33vh;
+	margin: 0;
+}
+.login-input {
+	
+}
+.login-submit {
+	
+}
