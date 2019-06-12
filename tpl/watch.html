@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html style="margin: 0;height: 100%;">
+<html style="margin: 0;height: 100%;width: 100%">
 	<head>
 		<title>Watch Page</title>
 		<link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
@@ -13,10 +13,23 @@
 		</div>
 		<!-- URL for the MJPEG video -->
 		<img class="stream-image" src="{{ url_for('watch_video_only') }}" alt="Video Source">
-		<div class="comments">
+		<div class="comments" id="comments">
+			{% for comment in comments %}
+			<div class="comment-block">
+				<div><strong>{{comment[1]}}</strong><a href="/user/{{comment[4]}}" style="color: gray; margin-left: 10px;">(/user/{{comment[4]}})</a></div>
+				<div class="comment-content">{{comment[3]}}</div>
+				<div class="comment-time">{{comment[2]}}</div>
+			</div>
+			{% endfor %}
+		</div>
+		<div id="error" style="color:red;"></div>
+		<div class="comment-input">
+			<input type="text" style="width: 85%" id="create-post-content">
+			<button style="width: 14%;" id="post-button">Post</button>
 		</div>
 	</body>
 </html>
+<script src="{{ url_for('static', filename='js/watch.js') }}"></script>
 <!-- Code for printing the URL for the video -->
 {# url_for('watch_video_only') #}
 

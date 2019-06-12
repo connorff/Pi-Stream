@@ -6,3 +6,10 @@ CREATE TABLE users(
 	password CHAR(60) NOT NULL,
 	user_level INT(2) NOT NULL
 );
+
+CREATE TABLE comments(
+	comment_id INT(7) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	user_id INT(4) NOT NULL,
+	time INT(11) NOT NULL,
+	content VARCHAR(250) NOT NULL
+);

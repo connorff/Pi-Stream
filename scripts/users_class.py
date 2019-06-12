@@ -7,6 +7,18 @@ class User:
 	def __init__(self, conn):
 		self.conn = conn
 		self.db = self.conn.cursor()
+	
+	def checkIfIdExists(self, user_id):
+		sql = "SELECT COUNT(*) FROM users WHERE id = %s;"
+		self.db.execute(sql, (user_id,))
+		
+		result = self.db.fetchone()
+		
+		#if id already exists
+		if result[0] > 0:
+			return True
+			
+		return False
 		
 	def checkUsername(self, username):
 		username = username.lower()
@@ -120,5 +132,15 @@ class User:
 		sql = "SELECT username FROM users WHERE id = %s;"
 		
 		self.db.execute(sql, (user_id,))
-		username = self.db.fetchone()[0]
+		username = self.db.fetchone()
+		return username
+		
+	def getIdByUsername(self, username):
+		if not self.checkUsernameExists(username):
+			return False
+		
+		sql = "SELECT id FROM users WHERE username = %s;"
+		
+		self.db.execute(sql, (username,))
+		username = self.db.fetchone()
 		return username

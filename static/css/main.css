@@ -38,8 +38,21 @@
 }
 .comments {
 	overflow-y: scroll;
-	height: 33vh;
+	height: 30vh;
 	margin: 0;
+}
+.comment-input {
+	height: 3vh;
+}
+.comment-block {
+	border-bottom: lightgray solid 1px;
+	padding-bottom: 5px;
+}
+.comment-content {
+	padding: 2vh 0 2vh 0;
+}
+.comment-time {
+	color: gray;
 }
 .login-input {
 	
